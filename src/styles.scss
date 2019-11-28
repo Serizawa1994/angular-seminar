@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+//Material Design Icons
+
+@import '~material-design-icons-iconfont/dist/material-design-icons.css';
+
+// Ignite UI for Angular theme
+@import "~igniteui-angular/lib/core/styles/themes/index";
+@include igx-core();
+@include igx-theme($default-palette);

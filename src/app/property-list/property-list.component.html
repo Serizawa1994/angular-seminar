@@ -1,0 +1,23 @@
+<button igcButton="flat" igxButtonColor="white"
+  igxButtonBackground="green" igxRipple="#09f" (click)="exportExcel()">
+    <igx-icon>file_download</igx-icon>
+    <span>TO EXCEL</span>
+</button>
+
+<igx-grid
+  #grid
+  [data]="data"
+  [autoGenerate]="false"
+  [paging]="true"
+  [perPage]="12"
+  [width]="'100%'"
+  [height]="'500px'"
+  [displayDensity]="compact"
+  [allowFiltering]="true"
+  [filterMode]="'excelStyleFilter'">
+  <igx-column field="propertyId" header="ID" dataType="number" hidden=true></igx-column>
+  <igx-column field="propertyName" header="備品名" dataType="string" width="33%" [sortable]="true" [filterable]="true"></igx-column>
+  <igx-column field="isUsed" header="利用中" dataType="boolean" width="33%" [formatter]="formatBoolean" [sortable]="true" [filterable]="true"></igx-column>
+  <igx-column field="purchaseDate" header="購入日" dataType="date" width="34%" [formatter]="formatDate" [sortable]="true" [filterable]="false"></igx-column>
+</igx-grid>
+    
